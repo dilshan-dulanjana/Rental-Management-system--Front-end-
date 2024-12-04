@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-8">
+     <div class="row">
+       <form (ngSubmit) ="getCustomerBySearch()" class="form-inline my-2 my-lg-0">
+         <div class="row">
+           <h2>Customer Profile</h2>
+             <div class="col mt-3">
+                 <input id="searchInput" class="form-control mr-sm-2 w-50%" type="search" placeholder="Search" aria-label="Search"/>
+             </div>
+             <div class="col mt-3" >
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             </div>
+      
+         </div>
+   
+     </form>
+     </div>
+   
+   
+           <div class="row">
+               <form (ngSubmit)="onUpdate()">
+                   <div class="form-group mt-4" >
+                       <input   [(ngModel)]="customer.customerID" type="text" class="form-control" id="customerID" [(ngModel)]="customer.customerID" name="customerID"
+                       required placeholder="Customer ID" disabled /> 
+                   </div>
+                 
+                   <div class="form-group mt-3">
+                     <label for="txt-customerName">Customer Name :</label>
+                     
+                     <input   [(ngModel)]="customer.name" type="text" class="form-control" id="txt-customerName" [(ngModel)]="customer.name" name="customerName"
+                       required />
+                   </div>
+                   <div class="form-group mt-3" >
+                     <label for="txt-customerContact">Customer Contact: </label>
+                     <input [(ngModel)]="customer.contact" type="number" class="form-control" id="txt-customerContact" [(ngModel)]="customer.contact" name="customercontact"
+                       required />
+                   </div>
+                   <div class="form-group mt-3">
+                     <label for="txt-CustomerCity">Customer City: </label>
+                     <input [(ngModel)]="customer.city" type="text" class="form-control" id="txt-CustomerCity" [(ngModel)]="customer.city"
+                       name="studentContact" required />
+                   </div>
+
+
+                   <button type="submit" class="btn btn-primary mt-3" (click)="onUpdate()">Update</button>
+               </form>
+               <div class="mt-2 mt-3">
+                   <button  class="btn btn-danger " (click)="deleteStudent()">Delete</button>
+               </div >
+                  
+              
+           </div>
+    </div>
+   
+       
+       
+ </div>
+ 
